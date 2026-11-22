@@ -1,0 +1,366 @@
+/* Layout & Container */
+.catalog-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+
+.catalog-header {
+  margin-bottom: 32px;
+}
+
+.catalog-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+}
+
+.catalog-subtitle {
+  color: #64748b;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+/* Alert Notification */
+.alert-box {
+  margin-bottom: 24px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.925rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.alert-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-weight: bold;
+}
+
+/* Main Grid Layout */
+.catalog-grid-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Products Cards Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-box {
+  width: 100%;
+  height: 190px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #2563eb;
+  background-color: #eff6ff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.product-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.product-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.product-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.stock-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stock-in {
+  color: #16a34a;
+}
+
+.stock-out {
+  color: #dc2626;
+}
+
+.btn-add-cart {
+  width: 100%;
+  padding: 11px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add-cart.available {
+  background-color: #0f172a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn-add-cart.available:hover {
+  background-color: #2563eb;
+}
+
+.btn-add-cart.depleted {
+  background-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Sidebar Cart */
+.cart-sidebar {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  position: sticky;
+  top: 94px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.cart-badge {
+  background-color: #f1f5f9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #475569;
+}
+
+.empty-cart-box {
+  text-align: center;
+  padding: 40px 0;
+  color: #94a3b8;
+}
+
+.empty-cart-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.empty-cart-text {
+  font-size: 0.9rem;
+}
+
+/* Cart Items List */
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+  margin-right: 12px;
+}
+
+.cart-item-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.cart-item-price {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.qty-control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-qty {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-qty:hover {
+  background-color: #f8fafc;
+}
+
+.qty-count {
+  font-size: 0.875rem;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Coupon & Totals */
+.coupon-section {
+  margin: 20px 0;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.coupon-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.coupon-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.totals-section {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+  margin-bottom: 20px;
+}
+
+.subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transition: opacity 0.2s ease;
+}
+
+.btn-checkout:hover {
+  opacity: 0.95;
+}
+
+/* Responsive (Mobile/Tablet) */
+@media (max-width: 900px) {
+  .catalog-grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .cart-sidebar {
+    position: static;
+  }
+}
